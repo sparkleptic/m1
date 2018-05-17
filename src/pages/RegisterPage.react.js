@@ -38,7 +38,7 @@ export default class RegisterPage extends React.PureComponent {
    * @param {*} event
    */
   handleFormSubmit = (event) => {
-    console.log(this.state.formValues);
+    alert( JSON.stringify(this.state.formValues) );
   }
 
   render() {
@@ -75,6 +75,17 @@ export default class RegisterPage extends React.PureComponent {
                 name="Password"
                 placeholder="Password"
                 type="password"
+                position="append"
+                className={"mb-3"}
+                onChange={(e) => { this.handleValueChange(e); }}
+              />
+            </Form.Group>
+
+            <Form.Group label="Zip Code">
+              <Form.Input
+                name="zip"
+                placeholder="Enter Zip Code"
+                type="text"
                 position="append"
                 className={"mb-3"}
                 onChange={(e) => { this.handleValueChange(e); }}
